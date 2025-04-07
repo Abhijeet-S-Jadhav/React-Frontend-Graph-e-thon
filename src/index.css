@@ -1,0 +1,115 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --bg-primary: #0a0f18; /* Deep space blue */
+  --bg-secondary: #141a2a; /* Slightly lighter blue/grey */
+  --bg-tertiary: #20283e; /* Panel background */
+  --text-primary: #e0e0e0; /* Light grey */
+  --text-secondary: #a0a0a0; /* Medium grey */
+  --accent-primary: #00f0ff; /* Cyan */
+  --accent-secondary: #7f00ff; /* Purple */
+  --border-color: rgba(0, 240, 255, 0.2); /* Translucent cyan */
+  --error-color: #ff4d4d;
+  --success-color: #4dff88;
+
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --shadow-glow: 0 0 15px rgba(0, 240, 255, 0.3);
+  --shadow-deep: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--accent-primary);
+  margin-top: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px var(--accent-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-display);
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  color: var(--bg-primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+}
+
+button:disabled {
+  background: grey;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+input::placeholder,
+select {
+  color: var(--text-secondary);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--accent-primary);
+  font-size: 0.9em;
+}

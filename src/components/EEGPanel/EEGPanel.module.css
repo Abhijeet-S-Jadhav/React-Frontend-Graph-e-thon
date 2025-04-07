@@ -1,0 +1,175 @@
+/* src/components/EEGPanel/EEGPanel.module.css */
+.eegPanel {
+    /* Panel styles inherited via 'panel' class from App.css */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .uploadSection {
+      margin-bottom: 25px;
+  }
+  
+  /* Grid layout for the form */
+  .formGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+      gap: 15px 20px; /* Row gap, Column gap */
+      margin-bottom: 20px; /* Space before button */
+  }
+  
+  /* Make labels stay with their inputs if needed */
+  .formGrid > div {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  
+  /* Style file input for better appearance */
+  .fileInput {
+      cursor: pointer;
+  }
+  
+  .fileInput::file-selector-button {
+      font-family: var(--font-display);
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+  }
+  
+  .fileInput::file-selector-button:hover {
+      background: var(--accent-secondary);
+      color: white;
+  }
+  
+  .fileNameDisplay {
+      font-size: 0.8em;
+      color: var(--text-secondary);
+      margin-top: 5px;
+      font-style: italic;
+  }
+  
+  .divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 30px 0;
+  }
+  
+  .loadingIndicator {
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-display);
+    color: var(--accent-primary);
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  
+  
+  .sampleInfo {
+    /* Animations can be added here for appearing */
+     animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px 20px;
+    margin-bottom: 25px;
+    background-color: rgba(0,0,0, 0.2); /* Slight background */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .infoGrid div {
+    font-size: 0.95em;
+  }
+  
+  .infoGrid span {
+    color: #fff; /* Brighter text for values */
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  .tableContainer {
+      max-height: 300px; /* Limit table height and allow scroll */
+      overflow-y: auto;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 25px; /* Space below table */
+      background-color: rgba(0,0,0, 0.1);
+  }
+  
+  .eegTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px; /* Only needed if not inside container */
+    font-size: 0.9em;
+  }
+  
+  .eegTable th, .eegTable td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .eegTable th {
+    background-color: rgba(0, 240, 255, 0.1);
+    font-family: var(--font-display);
+    font-weight: bold;
+    color: var(--accent-primary);
+    position: sticky; /* Make header sticky within container */
+    top: 0;
+    z-index: 1;
+  }
+  
+  .eegTable tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle striping */
+  }
+  
+  .eegTable tbody tr:hover {
+    background-color: rgba(0, 240, 255, 0.15); /* Hover effect */
+  }
+  
+  
+  .eegVisual {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .eegVisual h4 {
+      margin-bottom: 15px;
+  }
+  
+  .eegImage {
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-deep);
+    max-height: 250px; /* Control image size */
+    width: auto;
+    margin: 0 auto;
+  }
+  
+  /* Style for the final button */
+  .sampleInfo button {
+      margin-top: 15px;
+      display: block; /* Make button block level */
+      margin-left: auto; /* Align right */
+      margin-right: auto;
+      min-width: 200px;
+  }
